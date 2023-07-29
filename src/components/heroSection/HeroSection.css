@@ -1,0 +1,103 @@
+/* HeroSection.css */
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    padding: 8.5rem 3rem;
+    height: 100%;
+  }
+  
+  .hero-content {
+    flex: 1;
+    padding-right: 40px;
+  }
+  
+  .join-us {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+
+  .courses{
+    font-size: 90px;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    color: var(--light-text-color);
+}
+.large-objects,.small-scale{
+    font-size:20px;
+    color: var(--light-text-color);
+  }
+  .small-scale{
+    margin-bottom: 3rem;
+  }
+  .cta-container {
+    margin-top: 20px;
+  }
+  
+  .quote-btn,
+  .learn-btn {
+    padding: 15px 30px;
+    margin-right: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .learn-btn {
+    background: none;
+    border: 1px solid var(--primary-color);
+    margin-left: 2rem;
+  }
+    .join-btn {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing:2px;
+  }
+  .hero-image-background{
+    clip-path: circle(50% at 50% 50%);
+    background:var(--faded-secondary-color);
+    width:406px;
+    height: 406px;
+    position:absolute;
+    z-index: 1;
+  }
+  
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .technology-image{
+    position: relative;
+    z-index: 2;
+  }
+
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .hero-container {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .hero-content {
+      text-align: center;
+      padding-right: 0;
+    }
+  
+    .hero-image {
+      margin-top: 20px;
+      /* Add any additional styling for the image container on smaller screens */
+    }
+  }
+  
