@@ -4,6 +4,7 @@
     align-items: center;
     padding: 30px 5rem; /* Adding padding from left and right */
     color: var(--light-text-color);
+    background: var(--dark-background-color);
   }
   
   .left-side {

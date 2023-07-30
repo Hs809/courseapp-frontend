@@ -2,7 +2,8 @@ import "./Signup.css";
 
 import React from "react";
 
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { Outlet } from "react-router-dom";
 
 const SignUp = () => {
   const {
@@ -11,14 +12,13 @@ const SignUp = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit: SubmitHandler = (data) => console.log(data);
+  const onSubmit = (data) => console.log(data);
 
   return (
     <div className="form-container">
+      <p className="form-title">MyCourseAcademia</p>
       <p className="form-title">Sign up </p>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input defaultValue="test" {...register("example")} />
-
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
@@ -83,6 +83,7 @@ const SignUp = () => {
 
         <button type="submit">Submit</button>
       </form>
+      <Outlet />
     </div>
   );
 };

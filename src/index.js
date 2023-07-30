@@ -4,17 +4,26 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
+import HeroSection from "./components/heroSection/HeroSection";
 import SignUp from "./components/signup/Signup";
+import ErrorPage from "./pages/Error";
 import reportWebVitals from "./reportWebVitals";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "/signup",
-    element: <SignUp />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "",
+        element: <HeroSection />,
+      },
+      {
+        path: "signup",
+        element: <SignUp />,
+      },
+    ],
   },
 ]);
 

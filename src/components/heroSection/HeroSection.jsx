@@ -2,6 +2,8 @@ import "./HeroSection.css";
 
 import React from "react";
 
+import { Outlet } from "react-router-dom";
+
 import Technology from "../../assets/technology.png";
 
 const HeroSection = () => {
@@ -22,6 +24,7 @@ const HeroSection = () => {
         {/* Your image goes here */}
         <img className="technology-image" src={Technology} alt="Hero" />
       </div>
+      <Outlet />
     </div>
   );
 };
