@@ -13,9 +13,12 @@
     gap: 32px; /* Adding some space between the brand and navigation links */
   }
   
-  .brand {
+  .brand a {
     font-size: 24px;
     font-weight: bold;
+    list-style: none;
+    color: var(--light-text-color);
+    text-decoration: none;
   }
   
   .nav-links {
@@ -27,6 +30,11 @@
   
   .nav-links li {
     cursor: pointer;
+  }
+  .nav-links li a{
+    text-decoration: none;
+    color: var(--light-text-color);
+
   }
   
   .right-side {
