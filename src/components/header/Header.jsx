@@ -23,7 +23,9 @@ const Header = () => {
         </nav>
       </div>
       <div className="right-side">
-        <p className="login">Login</p>
+        <Link className="login" to="/login">
+          <p>Login</p>
+        </Link>
         <Link to="/signup">
           <button className="join-btn">Join Us ➜</button>
         </Link>

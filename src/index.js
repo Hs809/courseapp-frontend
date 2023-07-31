@@ -4,9 +4,10 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
-import HeroSection from "./components/heroSection/HeroSection";
-import SignUp from "./components/signup/Signup";
 import ErrorPage from "./pages/Error";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import reportWebVitals from "./reportWebVitals";
 
 const router = createBrowserRouter([
@@ -17,11 +18,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <HeroSection />,
+        element: <Home />,
       },
       {
         path: "signup",
-        element: <SignUp />,
+        element: <Signup />,
+      },
+      {
+        path: "login",
+        element: <Login />,
       },
     ],
   },

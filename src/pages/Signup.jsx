@@ -1,11 +1,11 @@
-import "./Signup.css";
+import "../css/Signup.css";
 
 import React from "react";
 
 import { useForm } from "react-hook-form";
 import { Outlet } from "react-router-dom";
 
-const SignUp = () => {
+const Signup = () => {
   const {
     register,
     handleSubmit,
@@ -16,7 +16,6 @@ const SignUp = () => {
 
   return (
     <div className="form-container">
-      <p className="form-title">MyCourseAcademia</p>
       <p className="form-title">Sign up </p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
@@ -88,4 +87,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;
