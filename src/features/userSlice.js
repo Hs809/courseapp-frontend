@@ -46,7 +46,7 @@ export const userSlice = createSlice({
       })
       .addCase(signup.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.user = action.payload;
+        state.user = action.payload.data;
       })
       .addCase(signup.rejected, (state, action) => {
         state.isLoading = false;
@@ -57,7 +57,7 @@ export const userSlice = createSlice({
       })
       .addCase(login.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.user = action.payload;
+        state.user = action.payload.data;
       })
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false;

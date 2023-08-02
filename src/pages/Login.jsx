@@ -18,13 +18,12 @@ const Login = () => {
   } = useForm();
   const navigate = useNavigate();
   const onSubmit = (data) => {
-    try {
-      console.log({ data });
-      dispatch(login(data));
-      navigate("/courses");
-    } catch (error) {
-      console.error(error);
-    }
+    console.log({ data });
+    dispatch(login(data))
+      .then((res) => {
+        navigate("/courses");
+      })
+      .catch((err) => console.error(err));
   };
   const dispatch = useDispatch();
 
