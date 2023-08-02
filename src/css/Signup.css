@@ -22,6 +22,11 @@
     flex-direction: column;
     margin-bottom: 20px;
   }
+  .preview-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   label {
     font-weight: bold;
