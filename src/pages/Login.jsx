@@ -4,6 +4,10 @@ import "../css/Login.css";
 import React from "react";
 
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import { login } from "../features/userSlice";
 
 const Login = () => {
   const {
@@ -12,11 +16,21 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const navigate = useNavigate();
+  const onSubmit = (data) => {
+    try {
+      console.log({ data });
+      dispatch(login(data));
+      navigate("/courses");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const dispatch = useDispatch();
 
   return (
     <div className="login-container">
-      <form className="login-form" onSubmit={onSubmit}>
+      <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
         <p className="form-title">Login </p>{" "}
         <div className="form-group">
           <label htmlFor="email">Email:</label>
