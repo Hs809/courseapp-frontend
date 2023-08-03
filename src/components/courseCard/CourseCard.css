@@ -16,6 +16,10 @@
     transition: transform 0.2s;
     cursor: pointer;
   }
+  .course-card a {
+    text-decoration: none;
+    color: var(--dark-text-color);
+  }
   
   .course-card:hover {
     transform: translateY(-5px);

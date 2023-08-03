@@ -10,7 +10,7 @@ import { getCourseList } from "../features/courseSlice";
 const CoursesList = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
-  const courses = useSelector((state) => state.course.data.course) || [];
+  const courses = useSelector((state) => state.course.courseList.course) || [];
 
   const dispatch = useDispatch();
   console.log({ courses });

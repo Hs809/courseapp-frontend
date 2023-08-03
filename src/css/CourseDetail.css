@@ -1,0 +1,69 @@
+/* CourseDetail.css */
+
+.course-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .course-thumbnail {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .course-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .course-description {
+    margin-bottom: 20px;
+  }
+  
+  .course-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .course-ratings {
+    margin-bottom: 10px;
+  }
+  
+  .course-reviews {
+    margin-bottom: 20px;
+  }
+  
+  .purchase-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Responsive Styles */
+  @media only screen and (max-width: 600px) {
+    .course-container {
+      padding: 10px;
+    }
+  
+    .course-title {
+      font-size: 20px;
+    }
+  
+    .course-thumbnail {
+      margin-bottom: 10px;
+    }
+  
+    .purchase-button {
+      width: 100%;
+    }
+  }
+  
+  /* Add more media queries and styles as needed for other screen sizes */
+  

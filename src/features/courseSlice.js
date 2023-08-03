@@ -3,7 +3,8 @@ import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: {},
+  courseList: {},
+  courseDetail: {},
   isLoading: false,
   error: null,
 };
@@ -18,6 +19,20 @@ export const getCourseList = createAsyncThunk(
   }
 );
 
+export const getOneCourse = createAsyncThunk(
+  "course/getOneCourse",
+  async (courseID) => {
+    const response = await axios.get(
+      `http://localhost:4000/api/v1/course/${courseID}`,
+      {
+        withCredentials: true,
+      }
+    );
+    console.log({ response });
+    return response.data;
+  }
+);
+
 const courseSlice = createSlice({
   name: "course",
   initialState,
@@ -29,9 +44,21 @@ const courseSlice = createSlice({
       })
       .addCase(getCourseList.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.data = action.payload.data;
+        state.courseList = action.payload.data;
       })
       .addCase(getCourseList.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+      .addCase(getOneCourse.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getOneCourse.fulfilled, (state, action) => {
+        state.isLoading = false;
+        console.log({ data: action.payload.course });
+        state.courseDetail = action.payload.course;
+      })
+      .addCase(getOneCourse.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
       });
